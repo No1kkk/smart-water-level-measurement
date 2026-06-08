@@ -1,0 +1,10 @@
+[BÁO CÁO KIẾN TRÚC MÔ HÌNH ĐỀ ÁN]
+- Đề tài: Hệ thống đo lường mực nước và thể tích chất lỏng thông minh thời gian thực.
+- Kiến trúc hệ thống: Ứng dụng phương pháp Xử lý ảnh và Thị giác máy tính truyền thống (Computer Vision).
+
+Hệ thống trích xuất đặc trưng hình học vật lý trực tiếp dựa trên thuật toán dòng lệnh (Rule-based) thời gian thực, bao gồm:
+1. Thuật toán phân tích Profile độ sáng dọc (Light Intensity Profile) kết hợp toán tử sai phân đạo hàm bậc 1 để tự động xác định ranh giới mặt nước bất chấp khúc xạ.
+2. Mô hình toán học không gian khối trụ tròn tính toán dung tích chất lỏng (V_tổng và V_thực tế sau khi trừ hao dị vật chiếm chỗ).
+3. Bộ lọc trung bình trượt (Moving Average Window = 3) để làm mượt tín hiệu nhiễu tần số quét của camera.
+
+Vì hệ thống vận hành dựa trên các quy luật toán học hình học trực tiếp, tính toán tức thời nên dự án hoạt động độc lập và KHÔNG sử dụng các mạng học sâu (Deep Learning) cần cấu hình mạnh. Do đó, dự án không phát sinh các tệp trọng số huấn luyện (.pkl, .h5, .pt). Toàn bộ logic cốt lõi của mô hình đã được đóng gói hoàn chỉnh và tối ưu trong tệp mã nguồn chính 'src/main.py'.
